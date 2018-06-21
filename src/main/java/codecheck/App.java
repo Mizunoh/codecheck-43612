@@ -28,7 +28,7 @@ public class App {
 	private static  String encode(String p){
 		int param = Integer.parseInt(p);
 		String result = Integer.toString(param, 8);
-		result.replace("0", "A")
+		String resultChar = result.replace("0", "A")
 				.replace("1", "B")
 				.replace("2", "C")
 				.replace("3", "D")
@@ -37,7 +37,7 @@ public class App {
 				.replace("6", "G")
 				.replace("7", "H")
 				.replace("8", "I");
-		return result;
+		return resultChar;
 	}
 
 	//与えられたアルファベット数字の値を10進数の数値に変換
