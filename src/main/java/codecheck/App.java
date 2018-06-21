@@ -27,7 +27,7 @@ public class App {
 	//与えられた10進数の数値をアルファベット数字に変換
 	private static  String encode(String p){
 		int param = Integer.parseInt(p);
-		String result = Integer.toString(param, 8);
+		String result = Integer.toString(param, 9);
 		String resultChar = result.replace("0", "A")
 				.replace("1", "B")
 				.replace("2", "C")
@@ -42,8 +42,17 @@ public class App {
 
 	//与えられたアルファベット数字の値を10進数の数値に変換
 	private static  int decode(String p){
-		int param = Integer.parseInt(p);
-		return 0;
+		String paramInt = p.replace("A", "0")
+				.replace("B", "1")
+				.replace("C", "2")
+				.replace("D", "3")
+				.replace("E", "4")
+				.replace("F", "5")
+				.replace("G", "6")
+				.replace("H", "7")
+				.replace("I", "8");
+		int result = Integer.parseInt(paramInt, 10);
+		return result;
 	}
 
 	 //あるアルファベット数字に対して、足すとアルファベット数字の値が、すべてHになるような値に変換
