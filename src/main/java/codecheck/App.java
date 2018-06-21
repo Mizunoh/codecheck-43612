@@ -3,6 +3,8 @@ package codecheck;
 public class App {
 	public static void main(String[] args) {
 		String sub = args[0].substring(0, args[0].indexOf(",")-1);
+		System.out.println(sub);
+		System.out.println(args[0].substring(args[0].indexOf(",")+2, args[0].length()-1));
 		if (sub == "encode") {
 			String output = encode(args[0].substring(args[0].indexOf(",")+2, args[0].length()-1));
 			System.out.println(output);
