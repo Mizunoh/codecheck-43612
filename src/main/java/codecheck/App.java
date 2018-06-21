@@ -4,7 +4,8 @@ public class App {
 	public static void main(String[] args) {
 		//for (int i = 0, l = args.length; i < l; i++) {
 			//String sub = args[i].substring(0, args[i].indexOf(",")-2);
-			//System.out.println(sub);
+			System.out.println(args[0]);
+			System.out.println(args[1]);
 			//System.out.println(args[i].substring(args[i].indexOf(",")+2, args[i].length()-1));
 			if (args[0] == "encode") {
 				String output = encode(args[1]);
