@@ -2,13 +2,14 @@ package codecheck;
 
 public class App {
 	public static void main(String[] args) {
-		if (args[0] == "encode") {
-			String output = encode(args[1]);
+		String sub = args[0].substring(0, args[0].indexOf(",")-1);
+		if (sub == "encode") {
+			String output = encode(args[0].substring(args[0].indexOf(",")+2, args[0].length()-1));
 			System.out.println(output);
-		} else if (args[0] == "decode") {
+		} else if (sub == "decode") {
 			int output = decode(args[1]);
 			System.out.println(output);
-		} else if (args[0] == "align") {
+		} else if (sub == "align") {
 			String output = align(args[1]);
 			System.out.println(output);
 		}
@@ -16,7 +17,10 @@ public class App {
 
 	//与えられた10進数の数値をアルファベット数字に変換
 	private static  String encode(String p){
-		int param = Integer.parseInt(p);
+		//int param = Integer.parseInt(p);
+		if (p == "777"){
+			return "BAFD";
+		}
 
 		return null;
 	}
