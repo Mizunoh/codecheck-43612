@@ -23,6 +23,7 @@ public class App {
 	//与えられた10進数の数値をアルファベット数字に変換
 	private static  String encode(String p){
 		//int param = Integer.parseInt(p);
+		System.out.println("encode in");
 		if (p == "777"){
 			return "BAFD";
 		}
