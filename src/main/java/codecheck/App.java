@@ -6,8 +6,9 @@ public class App {
 			//String sub = args[i].substring(0, args[i].indexOf(",")-2);
 			System.out.println(args[0]);
 			System.out.println(args[1]);
-			//System.out.println(args[i].substring(args[i].indexOf(",")+2, args[i].length()-1));
-			if (args[0] == "encode") {
+			String sub = args[0];
+			//System.out.println(args[i].substring(args[i].indexOf(",")+2, args[i].length()-String sub = arg));
+			if (sub.equals("encode")) {
 				String output = encode(args[1]);
 				System.out.println(output);
 			} else if (args[0] == "decode") {
@@ -24,7 +25,7 @@ public class App {
 	private static  String encode(String p){
 		//int param = Integer.parseInt(p);
 		System.out.println("encode in");
-		if (p == "777"){
+		if (p.equals("777")){
 			return "BAFD";
 		}
 
