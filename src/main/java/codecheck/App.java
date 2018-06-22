@@ -73,7 +73,7 @@ public class App {
 		}
 
 		// 差分を求める
-		int addValue = Integer.parseInt(str) - paramDecode;
+		int addValue = strDecode - paramDecode;
 		String  addStr = encode(String.valueOf(addValue));
 
 		String result = String.format("%s + %s = %s", p, addStr, str);
