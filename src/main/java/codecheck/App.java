@@ -59,12 +59,14 @@ public class App {
 
 		int paramDecode = decode(p); // 数値にする
 		String str = "";
+		System.out.println(paramDecode);
 
 		// 判定用に、長さ分「H」を繋げる
 		for (int i = 0; i<=p.length(); i++){
 			str = str + s;
 		}
 		int strDecode = decode(str);
+		System.out.println(strDecode);
 
 		// 判定
 		if (paramDecode > strDecode) {
