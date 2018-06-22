@@ -51,7 +51,7 @@ public class App {
 				.replace("G", "6")
 				.replace("H", "7")
 				.replace("I", "8");
-		int result = Integer.parseInt(paramInt, 10);
+		int result = Integer.parseInt(paramInt, 9);
 		return result;
 	}
 
