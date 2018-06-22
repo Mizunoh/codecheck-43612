@@ -2,8 +2,6 @@ package codecheck;
 
 public class App {
 	public static void main(String[] args) {
-		//System.out.println(args[0]);
-		//System.out.println(args[1]);
 		String sub = args[0];
 		switch (sub) {
 			case "encode": {
@@ -57,7 +55,27 @@ public class App {
 
 	 //あるアルファベット数字に対して、足すとアルファベット数字の値が、すべてHになるような値に変換
 	private static  String align(String p){
-		int param = Integer.parseInt(p);
-		return null;
+		String s = "7";
+
+		int paramDecode = decode(p); // 数値にする
+		String sevenStr = "";
+
+		// 判定用に、長さ分「7」を繋げる
+		for (int i = 0; i<=p.length(); i++){
+			sevenStr = sevenStr + s;
+		}
+
+		// 判定
+		if (paramDecode > Integer.parseInt(sevenStr)) {
+			sevenStr = sevenStr + s;
+		}
+		String resultValue = encode(sevenStr);
+
+		int addValue = Integer.parseInt(sevenStr) - paramDecode;
+		String  addStr = encode(String.valueOf(addValue));
+
+		String result = String.format("%s + %s = %s", p, addStr, resultValue);
+
+		return result;
 	}
 }
