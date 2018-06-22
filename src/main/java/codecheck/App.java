@@ -10,7 +10,8 @@ public class App {
 				break;
 			}
 			case "decode": {
-				int output = decode(args[1]);
+				//int output = decode(args[1]);
+				long output = decode(args[1]);
 				System.out.println(output);
 				break;
 			}
@@ -24,8 +25,9 @@ public class App {
 
 	//与えられた10進数の数値をアルファベット数字に変換
 	private static  String encode(String p){
-		int param = Integer.parseInt(p);
-		String result = Integer.toString(param, 9);
+		//int param = Integer.parseInt(p);
+		long paramL = Long.parseLong(p);
+		String result = Long.toString(paramL, 9);
 		String resultChar = result.replace("0", "A")
 				.replace("1", "B")
 				.replace("2", "C")
@@ -39,7 +41,7 @@ public class App {
 	}
 
 	//与えられたアルファベット数字の値を10進数の数値に変換
-	private static  int decode(String p){
+	private static  long decode(String p){
 		String paramInt = p.replace("A", "0")
 				.replace("B", "1")
 				.replace("C", "2")
@@ -49,7 +51,7 @@ public class App {
 				.replace("G", "6")
 				.replace("H", "7")
 				.replace("I", "8");
-		int result = Integer.parseInt(paramInt, 9);
+		long result = Long.parseLong(paramInt, 9);
 		return result;
 	}
 
@@ -57,14 +59,14 @@ public class App {
 	private static  String align(String p){
 		String s = "H";
 
-		int paramDecode = decode(p); // 数値にする
+		long paramDecode = decode(p); // 数値にする
 		String str = "";
 
 		// 判定用に、長さ分「H」を繋げる
 		for (int i = 0; i<p.length(); i++){
 			str = str + s;
 		}
-		int strDecode = decode(str);
+		long strDecode = decode(str);
 
 		// 判定
 		if (paramDecode > strDecode) {
@@ -73,7 +75,7 @@ public class App {
 		}
 
 		// 差分を求める
-		int addValue = strDecode - paramDecode;
+		long addValue = strDecode - paramDecode;
 		String  addStr = encode(String.valueOf(addValue));
 
 		String result = String.format("%s + %s = %s", p, addStr, str);
