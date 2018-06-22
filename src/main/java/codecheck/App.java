@@ -55,26 +55,28 @@ public class App {
 
 	 //あるアルファベット数字に対して、足すとアルファベット数字の値が、すべてHになるような値に変換
 	private static  String align(String p){
-		String s = "7";
+		String s = "H";
 
 		int paramDecode = decode(p); // 数値にする
-		String sevenStr = "";
+		String str = "";
 
-		// 判定用に、長さ分「7」を繋げる
+		// 判定用に、長さ分「H」を繋げる
 		for (int i = 0; i<=p.length(); i++){
-			sevenStr = sevenStr + s;
+			str = str + s;
 		}
+		int strDecode = decode(str);
 
 		// 判定
-		if (paramDecode > Integer.parseInt(sevenStr)) {
-			sevenStr = sevenStr + s;
+		if (paramDecode > strDecode) {
+			str = str + s;
+			strDecode = decode(str);
 		}
-		String resultValue = encode(sevenStr);
 
-		int addValue = Integer.parseInt(sevenStr) - paramDecode;
+		// 差分を求める
+		int addValue = Integer.parseInt(str) - paramDecode;
 		String  addStr = encode(String.valueOf(addValue));
 
-		String result = String.format("%s + %s = %s", p, addStr, resultValue);
+		String result = String.format("%s + %s = %s", p, addStr, str);
 
 		return result;
 	}
